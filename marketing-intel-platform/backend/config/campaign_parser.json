@@ -1,0 +1,30 @@
+{
+  "delimiters": ["-", "_"],
+  "regex": {
+    "country": "^[A-Z]{2}$",
+    "language": "^[a-z]{2}$",
+    "date_code": "^\\d{6}$",
+    "business_unit": "^(CB\\d+|CB1)$"
+  },
+  "known_ad_types": [
+    "PLA",
+    "Search",
+    "Shopping",
+    "Pmax",
+    "Performance Max",
+    "Demand Gen",
+    "Meta ASC",
+    "Meta Sales",
+    "Video"
+  ],
+  "known_goals": ["purchase", "Purchase", "lead", "Lead", "app", "App"],
+  "promotion_tokens": ["无", "现金", "coupon", "Coupon", "discount", "Discount"],
+  "optimization_prefixes": ["ROAS", "Roas", "CPA", "CPC"],
+  "position_rules": [
+    {
+      "name": "hyphen_split_guessing_v1",
+      "notes": "先按 - 拆分，然后用正则/字典自动识别常见 token；无法识别的部分会留空，并写入 campaign_dims_json 便于后续迭代。"
+    }
+  ]
+}
+
